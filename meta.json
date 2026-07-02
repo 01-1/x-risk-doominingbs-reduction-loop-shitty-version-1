@@ -1,0 +1,14 @@
+{
+  "goal": "Minimize existential risk using safe, lawful, cooperative means, maximizing positive impact.",
+  "last_attempted_turn": 20,
+  "last_completed_turn": 20,
+  "last_route": {
+    "description": "high-level planner/monitor turn (every 10, alternating high/xhigh)",
+    "model": "gpt-5.5",
+    "reasoning": "xhigh",
+    "role": "planner_monitor"
+  },
+  "state_dir": "/home/vi/xriskdoominningbs/.xrisk_loop",
+  "updated_at": "2026-07-02T03:14:16.728960+00:00",
+  "workspace": "/home/vi/xriskdoominningbs"
+}

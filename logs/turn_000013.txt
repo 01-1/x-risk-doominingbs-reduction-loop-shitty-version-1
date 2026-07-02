@@ -1,0 +1,240 @@
+TURN 13 role=worker model=gpt-5.5 reasoning=low exit=0 elapsed=128.6s
+PROMPT: /home/vi/xriskdoominningbs/.xrisk_loop/logs/turn_000013_prompt.txt
+
+--- STDOUT ---
+
+┌─ Reasoning ──────────────────────────────────────────────────────────────────┐
+**Deciding on actions without web tools**
+
+I need to figure out my next steps since there’s no web tool available. I might need
+ to read the files provided, but first, I'll check the inbox or the current state
+ to gather relevant context. It seems using the available tools is key, but I need
+ to confirm what I can access. Let’s ensure I have everything in place before proceeding
+ further!**Deciding on actions without web tools**
+
+I need to figure out my next steps since there’s no web tool available. I might need to read the files provided, but first, I'll check the inbox or the current state to gather relevant context. It seems using the available tools is key, but I need to confirm what I can access. Let’s ensure I have everything in place before proceeding further!
+**Creating a rubric**
+
+I need to create a P4 rubric, which means I should think about what elements to include
+. I might read through an evaluation checklist to help guide the integration of criteria
+. This checklist could provide some structure and ensure I'm not overlooking any key
+ aspects. It’s important to have a clear assessment method, so I want to take my time
+ with this to get it just right!**Creating a rubric**
+
+I need to create a P4 rubric, which means I should think about what elements to include. I might read through an evaluation checklist to help guide the integration of criteria. This checklist could provide some structure and ensure I'm not overlooking any key aspects. It’s important to have a clear assessment method, so I want to take my time with this to get it just right!
+**Updating project status**
+
+It looks like I need to write an artifact and update the state. I might want to append
+ any notes or proposals if there aren't active tasks. Should I add recommendations
+ too? It’s also possible I need to read the remaining state. I might replace the turn
+ status and change backlog P4 to completed. I’ll use a patch for that and then create
+ relevant content.**Updating project status**
+
+It looks like I need to write an artifact and update the state. I might want to append any notes or proposals if there aren't active tasks. Should I add recommendations too? It’s also possible I need to read the remaining state. I might replace the turn status and change backlog P4 to completed. I’ll use a patch for that and then create relevant content.
+  ┊ review diff
+a/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md → b/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md
+@@ -0,0 +1,156 @@
++# AI Evaluation Disclosure Rubric v0
++
++Created: 2026-07-02, turn 13
++Status: draft local artifact; human review and source verification required before real-world use
++Scope: non-operational rubric for deciding how to disclose AI-safety evaluation results, especially dangerous-capability or misuse-relevant findings.
++
++Purpose: help authorized reviewers choose a disclosure tier that preserves accountability and decision usefulness while reducing misuse, privacy, legal, and security risk. This rubric consolidates disclosure themes from `ai_eval_safety_checklist_v0.md` and `dangerous_capability_eval_governance_checklist_v0.md`.
++
++Safety note: This artifact does not authorize outreach, publication, submission, public posting, regulator contact, account/API writes, or any other external side effect. It also does not include evaluation prompts, exploit paths, bio/chemical/weapon procedures, evasion methods, private data, secrets, or reproducible harmful detail.
++
++Source status: local synthesis only. No public-source verification was available in this worker turn. Treat all recommendations as draft governance guidance pending human/source review.
++
++## 1. Core disclosure principles
++
++1. Need-to-know by default: share sensitive evaluation details only with people or bodies that need them for mitigation, governance, legal/ethical review, or authorized oversight.
++2. Accountability still matters: withholding operational details should not become a reason to hide the existence, severity, uncertainty, or governance implications of important findings from appropriate decision makers.
++3. Separate raw evidence from safe summaries: raw or near-raw evidence may be necessary for mitigation, but broad reports should use redacted, high-level summaries.
++4. Authority and consent first: external disclosure requires appropriate authorization, legal/ethical review, and any required confidentiality or reporting pathway.
++5. Minimize enablement: do not disclose information that materially helps non-authorized actors reproduce harmful capabilities, bypass safeguards, identify vulnerable systems, or misuse private data.
++6. Preserve auditability: keep enough restricted documentation for authorized review, postmortem, and accountability.
++7. Date and scope claims: state what system/version/configuration was evaluated and avoid overgeneralizing beyond the evidence.
++
++## 2. Disclosure tiers
++
++Use the narrowest tier that satisfies safety, accountability, and governance needs.
++
++| Tier | Audience | Appropriate content | Required controls | Do not include |
++|---|---|---|---|---|
++| T0 — Restricted raw evidence | Named evaluators, safety/security leads, mitigation engineers, legal/ethics reviewers with need-to-know | Raw logs, transcripts, artifacts, or detailed evidence needed to verify/mitigate a finding | Access list, secure storage, retention/deletion plan, no forwarding, audit trail | Broad circulation, public links, unrelated examples, unnecessary personal/secret data |
++| T1 — Internal governance summary | Decision owners, release/deployment gatekeepers, senior safety leadership, incident commanders | Safe summary of scope, severity, confidence, affected decision, mitigations, residual risk, uncertainty, dissent | Redaction review; pointer to restricted evidence rather than embedding sensitive detail | Reproducible procedures, prompts, exploit chains, sensitive model/system details beyond need |
++| T2 — Authorized independent review | External auditor, regulator, AI safety institute, partner, or expert reviewer operating under proper authority/approval | Evidence and context necessary for independent assessment, tailored to the reviewer’s mandate | Explicit authorization, confidentiality/data-handling terms where applicable, legal/ethics review, disclosure log | Unapproved submissions, informal sharing, details outside the reviewer’s mandate |
++| T3 — Aggregated public transparency summary | Public, research community, customers/users, or broad stakeholders when approved | High-level risk class, governance action taken, mitigation status, limits, uncertainty, and safe lessons learned | Separate publication review for misuse/privacy/security/legal risk; approved communications owner | Sensitive methods, detailed prompts, exploit paths, bio/weapon/cyber procedures, secrets, private data, benchmark leakage |
++| T4 — Do not disclose beyond restricted review without further approval | No broad audience; possibly only T0/T1 holders until reviewed | A placeholder that a sensitive issue exists may be recorded internally; broader content waits for review | Senior safety/legal/security review; explicit re-review date and accountable owner | Any uncontrolled external or broad internal release |
++
++## 3. Decision criteria
++
++Before choosing a tier, answer each question and record the rationale.
++
++### 3.1 Misuse and harm-enablement risk
++
++- Could the information help a non-authorized actor cause harm, evade safeguards, exploit systems, or reproduce a dangerous capability?
++- Does it contain procedural detail, prompts, code, configurations, vulnerabilities, or examples that materially lower barriers to misuse?
++- Would aggregation or redaction preserve decision usefulness while reducing enablement?
++
++Default: if enablement risk is high or uncertain, keep raw details in T0 and use T1/T3 summaries only after review.
++
++### 3.2 Accountability and governance need
++
++- Who must know to make or audit a release, mitigation, incident, policy, or monitoring decision?
++- Would withholding even a high-level summary prevent appropriate oversight or allow unsafe deployment?
++- Is an independent reviewer needed because of severity, conflict of interest, public impact, or unresolved disagreement?
++
++Default: high accountability need can justify T1 or T2 disclosure, but not uncontrolled public release of sensitive methods.
++
++### 3.3 Authority, consent, and legal/ethical review
++
++- Who owns or controls the evaluated system, data, and results?
++- Is the proposed recipient authorized to receive this information?
++- Are confidentiality, privacy, contractual, regulatory, or jurisdiction-specific constraints identified?
++- Has a qualified human reviewed the disclosure plan where stakes are non-trivial?
++
++Default: absent clear authority for external disclosure, do not contact, submit, post, or share externally; write a proposal for human review instead.
++
++### 3.4 Privacy, security, and confidential information
++
++- Does the material include personal data, credentials, secrets, proprietary information, user content, private vulnerabilities, or regulated data?
++- Can it be redacted, aggregated, anonymized, or replaced with a pointer to restricted evidence?
++- Are storage, retention, deletion, and access controls documented?
++
++Default: sensitive personal/security/confidential information stays T0 unless a reviewed basis exists for broader sharing.
++
++### 3.5 Evidence quality and uncertainty
++
++- Are findings observations, assumptions, evaluator judgments, or source-verified claims?
++- What system/version/configuration/date does the evidence cover?
++- Could the result be an artifact of prompt sensitivity, small sample size, evaluator judgment, or changed model behavior?
++- Does the report clearly state what was not tested?
++
+… omitted 78 diff line(s) across 1 additional file(s)/section(s)
+**Updating state information**
+
+I need to update the state, and I can patch the lines accordingly. It's crucial to
+ include the completed artifact list in this process to ensure everything is covered
+. I want to make sure I have all the necessary details before I move forward. Okay
+, let’s focus on organizing this update, so everything is accurate and complete. It
+’s the little details that count!**Updating state information**
+
+I need to update the state, and I can patch the lines accordingly. It's crucial to include the completed artifact list in this process to ensure everything is covered. I want to make sure I have all the necessary details before I move forward. Okay, let’s focus on organizing this update, so everything is accurate and complete. It’s the little details that count!
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md → b//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+@@ -13,12 +13,12 @@
+ 6. For the next worker turns, prioritize evidence grounding and artifact integration over producing more generic templates.
+ 
+ ## Run status
+-- Turn: 12, worker pass.
++- Turn: 13, worker pass.
+ - User inbox: checked; no new steering beyond the run prompt.
+ - External side effects this run: none. Local files only.
+-- Worker artifact added: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md.
+-- Completed artifacts: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/evidence_log_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn10_monitor_audit_and_backlog.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md.
+-- Current priority theme until next monitor turn: evidence quality and usability for the AI governance/evals artifact chain. Use read-only public source verification if available; if not, improve artifact integration and usability rather than adding broad, duplicative templates.
++- Worker artifact added: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
++- Completed artifacts: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/evidence_log_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn10_monitor_audit_and_backlog.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
++- Current priority theme until next monitor turn: evidence quality and usability for the AI governance/evals artifact chain. Use read-only public source verification if available; if not, avoid broad new templates and either source-upgrade locally source-needed artifacts when tools permit or perform a monitor audit/refresh.
+ 
+ ## Turn 10 monitor audit summary
+ - Safety drift: none observed. The loop has stayed local, non-operational, and explicit about approval boundaries.
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md → b//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+@@ -65,13 +65,9 @@
+ - Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md.
+ - Result: indexed all local artifacts, recommended use order, evidence status, safety caveats, stale/source-needed items, and next maintenance actions; included no external-action recommendations.
+ 
+-### P4 — Draft a safe disclosure rubric for AI evaluation results
+-- Objective: Turn repeated disclosure-safety themes into a concise non-operational decision rubric for human reviewers.
+-- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
+-- Minimum acceptance check:
+-  - Defines reporting tiers such as internal restricted, independent auditor/regulator under appropriate authority, aggregated public summary, and do-not-disclose-without-review.
+-  - Gives criteria based on misuse risk, accountability need, consent/authority, legal/ethical review, and uncertainty.
+-  - Avoids procedural harmful details and does not recommend public release of sensitive methods.
++### Completed — Draft a safe disclosure rubric for AI evaluation results
++- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
++- Result: consolidated disclosure tiers and decision criteria for AI evaluation results, including restricted raw evidence, internal governance summaries, authorized independent review, aggregated public transparency summaries, and do-not-disclose-without-review cases; emphasized misuse risk, accountability, authority/consent, legal/ethical review, privacy/security, uncertainty, and redaction; avoided procedural harmful details and did not recommend uncontrolled public release.
+ 
+ ### P5 — Source-upgrade the AI incident response playbook
+ - Objective: Improve evidence grounding for ai_incident_response_playbook_v0.md using public/read-only incident-response and AI-incident sources when browsing is available.
+@@ -132,7 +128,7 @@
+ - Result: audited recent work, identified evidence quality and repetition risks, and reprioritized the next worker queue.
+ 
+ ## Current best next step
+-If the next turn is a normal worker turn and browsing is available, perform P1: verify/source /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md with read-only public research and create /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_source_verification_v0.md, using /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md as the verification queue. If browsing is still unavailable, perform P4: create /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md to consolidate safe disclosure tiers and criteria for AI evaluation results without adding operational detail.
++If the next turn is a normal worker turn and browsing is available, perform P1: verify/source /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md with read-only public research and create /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_source_verification_v0.md, using /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md as the verification queue. If browsing is still unavailable, the next best step is a high-level monitor audit/refresh or a narrow local source-gap integration pass that updates the artifact index to include the new disclosure rubric and identifies which artifacts should be paused until source verification is possible.
+ 
+ ## Open questions / assumptions to track
+ - Whether public web access is available in worker turns; if not, artifacts must clearly mark source gaps and should prioritize evidence-log instances or artifact integration.
+**Considering note appending**
+
+I need to append some notes and proposals. I'm thinking about using a patch for app
+ending, but I’m wondering if reading the tails is really necessary or not. If I use
+ a patch, it seems likely that appending could work better, but I want to make sure
+ I’m approaching this in the right way. It feels like there’s a bit to unpack here
+, so I’ll consider my options carefully.**Considering note appending**
+
+I need to append some notes and proposals. I'm thinking about using a patch for appending, but I’m wondering if reading the tails is really necessary or not. If I use a patch, it seems likely that appending could work better, but I want to make sure I’m approaching this in the right way. It feels like there’s a bit to unpack here, so I’ll consider my options carefully.
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md → b//home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+@@ -103,3 +103,13 @@
+ - Kept the artifact as local integration guidance only; it does not upgrade source-needed claims or recommend external actions.
+ - Updated working_state.md to mark P3 complete and set the next best step to source verification if browsing becomes available, otherwise a safe AI evaluation disclosure rubric.
+ - No external actions were taken or recommended this turn.
++
++## 2026-07-02 — Turn 13 — worker: AI evaluation disclosure rubric v0
++- Checked working_state.md, Discord user_inbox.md, and the local artifact inventory. No new user steering was present.
++- Browsing was not available as a tool in this worker environment, so completed P4 rather than public source verification.
++- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
++- The rubric defines disclosure tiers for restricted raw evidence, internal governance summaries, authorized independent review, aggregated public transparency summaries, and do-not-disclose-without-review situations.
++- It gives decision criteria based on misuse risk, accountability need, authority/consent, legal/ethical review, privacy/security, evidence quality, and uncertainty, plus redaction and stop-condition checklists.
++- Kept the artifact non-operational: no eval prompts, exploit methods, harmful procedures, secrets, private data, or external-action recommendations.
++- Updated working_state.md to mark P4 complete and set the next best step to source verification if browsing becomes available, otherwise a monitor audit/refresh or narrow local integration pass.
++- No external actions were taken or recommended this turn.
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/proposals.md → b//home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+@@ -35,3 +35,6 @@
+ 
+ ## 2026-07-02 — Turn 12
+ No active external-action proposals. This worker turn created a local artifact index/usage guide and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, or remote modifications; future source verification should remain read-only public research if browsing is available.
++
++## 2026-07-02 — Turn 13
++No active external-action proposals. This worker turn created a local AI evaluation disclosure rubric and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications; any future external disclosure should require exact human approval and appropriate legal/ethical review.
+**Verifying files**
+
+I think I need to verify if certain files are present or if I can search for any existing
+ artifacts. It seems like a straightforward process, but I want to make sure I'm covering
+ all my bases. I'll check to see what files I can access and if they contain the information
+ I need. It's always good to be thorough, right? Let's make sure everything is in
+ order!**Verifying files**
+
+I think I need to verify if certain files are present or if I can search for any existing artifacts. It seems like a straightforward process, but I want to make sure I'm covering all my bases. I'll check to see what files I can access and if they contain the information I need. It's always good to be thorough, right? Let's make sure everything is in order!
+Completed work:
+- Checked state, user inbox, and relevant existing artifacts.
+- Created a new local artifact: AI Evaluation Disclosure Rubric v0.
+- The rubric defines safe disclosure tiers, decision criteria, redaction checks, stop conditions, and links to existing eval/governance artifacts.
+- Updated working state, turn notes, and proposals log.
+
+Files created/changed:
+- Created: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+
+Next best step:
+- If browsing becomes available: perform P1 source verification for the AI governance mini-brief.
+- If browsing remains unavailable: do a monitor audit/refresh or narrow integration pass updating the artifact index to include the new disclosure rubric.
+
+Safety/approval notes:
+- No external actions were taken.
+- No outreach, posting, submissions, public disclosure, account/API writes, or remote modifications were recommended.
+- The new rubric is non-operational and requires human/source review before real-world use.
+
+
+--- STDERR ---
+
+session_id: 20260702_024649_2bf557
+

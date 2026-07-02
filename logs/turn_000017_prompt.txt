@@ -1,0 +1,349 @@
+Programmatic x-risk reduction loop turn 17.
+
+        Route: worker turn
+        Model: gpt-5.5
+        Reasoning effort configured by wrapper: low
+        Hermes child process yolo mode: ON (--yolo passed; internal safety boundaries still apply)
+        Mission goal: Minimize existential risk using safe, lawful, cooperative means, maximizing positive impact.
+
+        Workspace: /home/vi/xriskdoominningbs
+        State file: /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+        Turn notes: /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+        Proposals file: /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+        Artifacts directory: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts
+        Logs directory: /home/vi/xriskdoominningbs/.xrisk_loop/logs
+        Discord user inbox: /home/vi/xriskdoominningbs/.xrisk_loop/user_inbox.md
+
+                Normal worker turn (gpt-5.5 / low):
+        - Read/update the state and turn notes.
+        - Prefer executing one concrete task already created by a high-level planner/monitor.
+        - If no planner-created task is actionable, choose exactly one safe, high-leverage task from the backlog or add a better one.
+        - Do concrete work now: research, synthesize, draft, design an eval/checklist, or create/update a local artifact.
+        - Keep scope small enough to finish this turn.
+        - If tempted to take an external side effect, instead write a proposal in proposals.md.
+
+        Discord/user steering:
+        - If the user inbox contains new relevant instructions, incorporate them this turn.
+        - User instructions can redirect priorities, ask for status, request pause/stop proposals, or ask questions.
+        - Still obey the safety boundaries and human-approval requirements above.
+
+        Required end-of-turn actions:
+        1. Update /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md if priorities/backlog/state changed.
+        2. Append a dated note for turn 17 to /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md.
+        3. Put any external-action recommendation in /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md instead of executing it.
+        4. Final response must be concise and include:
+           - Completed work
+           - Files created/changed
+           - Next best step
+           - Safety/approval notes, if any
+
+        Current working_state.md tail:
+        ---
+        [...truncated...]
+eplies from the user. It must not take other external side effects without human approval; proposals for such actions go in proposals.md.
+
+## Current strategy
+1. Maintain a prioritized backlog of safe, high-leverage work with concrete acceptance checks.
+2. Convert research into durable local artifacts others can inspect/use.
+3. Regularly audit for safety drift, repetitiveness, unsupported claims, opportunity cost, and impact.
+4. Prefer practical bottlenecks: AI safety evals, incident preparedness, governance research support, safety tooling, coordination materials, and local documentation/code that improves future safety work.
+5. Keep claims calibrated: distinguish established facts, reasoned judgments, assumptions, and source-needed placeholders.
+6. For the next worker turns, prioritize evidence grounding and artifact integration over producing more generic templates.
+
+## Run status
+- Turn: 16, worker pass.
+- User inbox: checked; no new steering beyond the run prompt.
+- External side effects this run: none. Local files only.
+- Worker artifact created: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn16_accidental_claim_audit.md.
+- Completed artifacts: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/evidence_log_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn10_monitor_audit_and_backlog.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn15_source_gap_triage_and_pause_recommendation.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn16_accidental_claim_audit.md.
+- Current priority theme until source verification is available: pause broad new AI governance/evals templates, preserve source-needed warnings, and use the evidence log as the canonical verification queue.
+
+## Turn 10 monitor audit summary
+- Safety drift: none observed. The loop has stayed local, non-operational, and explicit about approval boundaries.
+- Evidence drift: material. Several artifacts are useful scaffolds but contain source-needed/current-policy claims that should not be treated as established until public sources are verified.
+- Repetition risk: moderate. The artifact set now has several templates/checklists; workers should avoid more generic templates unless they fill a distinct gap.
+- Opportunity-cost note: AI governance/evals remains the best near-term focus because existing artifacts have clear source gaps and high leverage. Biosecurity/nuclear/resilience should be revisited later with source-map-only, non-operational tasks.
+- External-action posture: no outreach, posting, submissions, purchases, account/API writes, or remote modifications are warranted at this stage.
+
+## Prioritization rubric for worker turns
+Score candidate tasks on:
+- Impact relevance: direct connection to AI/bio/nuclear/other existential-risk reduction or resilience.
+- Tractability in this loop: can be done safely with local writes and read-only public research.
+- Evidence quality: can cite or clearly mark sources/assumptions.
+- Leverage: reusable by future work or human reviewers.
+- Safety/compliance: avoids operational harm, deception, unauthorized contact, or remote writes.
+
+Default ranking: high leverage + safe + concrete artifact beats speculative grand plans. Source verification and evidence-log instantiation now outrank additional broad templates.
+
+## Prioritized backlog for upcoming normal turns
+
+### P1 — Verify and source the AI governance mini-brief with read-only public research
+- Objective: If web browsing is available, verify the candidate sources in ai_governance_framework_mini_brief_v0.md and upgrade claims from source-needed to primary/research/synthesis labels where justified.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_source_verification_v0.md and/or a carefully patched /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md.
+- Minimum acceptance check:
+  - Verifies current URLs, document names, dates/versions, and access date for NIST AI RMF-related materials.
+  - Verifies at least two public frontier-lab preparedness/responsible-scaling/frontier-safety frameworks.
+  - Adds exact citations or short non-operational paraphrases from primary sources.
+  - Keeps legal/current-policy claims calibrated and dated; no claim should imply binding legal force unless a primary legal source says so.
+  - No outreach, posting, account use, external submissions, remote writes, or operational harmful detail.
+
+### Completed — Instantiate an evidence log for the AI governance/evals chain because browsing was unavailable
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md.
+- Result: extracted 12 major claims from the AI governance mini-brief and dangerous-capability evaluation governance checklist; recorded source status, likely source-of-record candidates, freshness risk, safety notes, and exact follow-up questions; did not upgrade any claim to verified.
+
+### P2 — Create a governance-framework comparison matrix after source verification
+- Objective: Compare the governance structure of NIST-style process language with public lab preparedness/responsible-scaling/frontier-safety frameworks.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/lab_preparedness_framework_comparison_v0.md.
+- Minimum acceptance check:
+  - Compares governance dimensions only: high-level trigger categories, decision authority, review cadence, deployment/release gates, disclosure controls, audit/oversight, incident/post-deployment monitoring, and update process.
+  - Includes source labels, dates, and access dates from P1.
+  - Avoids dangerous eval procedures, prompts, exploit details, bio/weapon instructions, or evasion content.
+
+### Completed — Build and update an artifact index and usage guide
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md.
+- Result: indexed all local artifacts, recommended use order, evidence status, safety caveats, stale/source-needed items, and next maintenance actions; turn 14 updated it to include the AI evaluation disclosure rubric and a pause/do-not-extend list for unsupported or repetitive work; included no external-action recommendations.
+
+### Completed — Turn 15 source-gap triage and pause recommendation
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn15_source_gap_triage_and_pause_recommendation.md.
+- Result: reaffirmed that source verification is the bottleneck, recommended pausing new broad AI governance/evals artifacts until a verification pass is completed, and listed narrow local-only fallback tasks if browsing remains unavailable.
+
+### Completed — Turn 16 accidental-claim audit
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn16_accidental_claim_audit.md.
+- Result: reviewed the AI governance mini-brief and dangerous-capability evaluation governance checklist for accidental overclaims, missing source warnings, unsafe operational detail, and external-action recommendations; found no urgent patch needed, preserved source-needed warnings, and reaffirmed read-only source verification as the next best step.
+
+### Completed — Draft a safe disclosure rubric for AI evaluation results
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
+- Result: consolidated disclosure tiers and decision criteria for AI evaluation results, including restricted raw evidence, internal governance summaries, authorized independent review, aggregated public transparency summaries, and do-not-disclose-without-review cases; emphasized misuse risk, accountability, authority/consent, legal/ethical review, privacy/security, uncertainty, and redaction; avoided procedural harmful details and did not recommend uncontrolled public release.
+
+### P5 — Source-upgrade the AI incident response playbook
+- Objective: Improve evidence grounding for ai_incident_response_playbook_v0.md using public/read-only incident-response and AI-incident sources when browsing is available.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_source_upgrade_v0.md.
+- Minimum acceptance check:
+  - Cites current public defensive sources for incident response concepts and AI-specific incident reporting/monitoring where available.
+  - Labels claims and dates sources.
+  - Keeps cyber/bio/weapon content defensive and non-operational.
+
+### P6 later — Non-operational biosecurity or nuclear source map after AI evidence chain improves
+- Objective: Diversify risk-domain coverage without operational harm.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/biosecurity_governance_source_map_v0.md or /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/nuclear_risk_public_source_map_v0.md.
+- Minimum acceptance check:
+  - Source map only; no protocols, tactical advice, targeting, acquisition, optimization, or evasion details.
+  - Uses authoritative public sources and uncertainty labels.
+  - No outreach, posting, account use, external submissions, remote writes, or operational harmful detail.
+
+## Completed backlog items
+
+### Completed — Build an intervention map and local artifact roadmap
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md
+- Result: covered AI safety/evals, AI governance, biosecurity, nuclear-risk reduction, civilizational resilience/incident preparedness, and meta/research infrastructure, with local artifact options and safety constraints.
+
+### Completed — Draft responsible AI-safety evaluation checklist
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md
+- Result: non-operational checklist covering authorization/scope, access boundaries, risk taxonomy, measurement design, mitigations, stop conditions, data handling, reporting, and postmortem.
+
+### Completed — Draft AI incident preparedness / response playbook
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md
+- Result: defensive playbook covering detection, triage, severity levels, escalation, high-level containment, communications, legal/ethical review, evidence preservation, recovery, and lessons learned.
+
+### Completed — Create source and evidence map for future research
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md
+- Result: source categories, evidence labels, confidence tags, and missing-evidence list.
+
+### Completed — Build a proposals template for human-reviewed external actions
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md
+- Result: standardized review template for outreach/submissions/account-use or other external side effects; no action authorized without exact human approval.
+
+### Completed — Draft governance research brief skeleton
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md
+- Result: template sections for question, stakeholders, claims/evidence, uncertainty, governance options, failure modes, and next research steps.
+
+### Completed — Fill one high-priority evidence gap with structured source-needed mini-brief
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md
+- Result: NIST AI RMF-style governance mini-brief; current/source-specific claims are marked assumption/source-needed pending verification.
+
+### Completed — Draft a dangerous-capability evaluation governance checklist
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md
+- Result: governance-gate checklist covering authorization, evaluator independence, risk-tier triggers, stop/escalation, deployment gates, evidence logging, disclosure tiers, and monitoring.
+
+### Completed — Create an evidence-log template for governance/evals artifacts
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/evidence_log_template_v0.md
+- Result: reusable evidence table and workflow for tracking source status, confidence, freshness risk, and safety notes.
+
+### Completed — Turn 10 monitor audit and backlog refresh
+- Artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn10_monitor_audit_and_backlog.md
+- Result: audited recent work, identified evidence quality and repetition risks, and reprioritized the next worker queue.
+
+## Current best next step
+If the next turn is a normal worker turn and browsing is available, perform P1: verify/source /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md with read-only public research and create /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_source_verification_v0.md, using /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md as the verification queue. If browsing is still unavailable, continue following /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn15_source_gap_triage_and_pause_recommendation.md and /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn16_accidental_claim_audit.md: pause broad new templates and choose only a narrow local source-gap warning, human-review handoff, artifact integration, or overclaim/audit task.
+
+## Open questions / assumptions to track
+- Whether public web access is available in worker turns; if not, artifacts must clearly mark source gaps and should prioritize evidence-log instances or artifact integration.
+- Which risk domains should dominate after the AI governance/evals source chain is improved; AI remains the near-term focus, but biosecurity/nuclear/resilience source maps should be reconsidered later.
+- Whether the user wants any external outreach, publishing, or submissions later; absent explicit approval, do not do it.
+- Whether any produced artifact is intended for real-world use; before external use, source verification and human review are required.
+
+## Stop / redirect conditions
+Redirect or pause a task if it:
+- Requires real-world contact, posting, submission, purchase, account/API write, or remote-system modification without explicit human approval.
+- Starts giving operational instructions for harm, evasion, intrusion, weapons, unsafe biological/chemical activity, or unauthorized testing.
+- Produces unsupported factual claims without labels or sources.
+- Repeats existing artifacts without improving quality, evidence, or usability.
+- Becomes speculative advocacy instead of producing concrete local artifacts.
+- Treats voluntary frameworks, candidate URLs, or source-needed notes as verified current policy.
+
+## Safety invariants
+- No unauthorized external actions.
+- No harmful operational detail.
+- No deception, coercion, harassment, or manipulation.
+- No credential/account use except read-only public research unless explicitly approved.
+- Human approval required for real-world outreach, posting, purchases, remote writes, submissions, or use of accounts/API-write actions.
+- Prefer defensive, non-operational, consent-based guidance.
+
+        ---
+
+        Current turn_notes.md tail:
+        ---
+        [...truncated...]
+if browsing remains unavailable.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 8 — worker: dangerous-capability evaluation governance checklist v0
+- Checked working_state.md, existing governance/evals artifacts, proposals.md, and Discord user_inbox.md. No new user steering was present.
+- Live web browsing was not available as a tool in this worker environment, so used the fallback local task rather than source verification.
+- Completed /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md.
+- The checklist covers authorization/consent, evaluator independence, risk-tier triggers, stop/escalation conditions, deployment/release gates, evidence logging, disclosure tiers, and post-deployment monitoring.
+- Kept the artifact governance-focused and non-operational; it explicitly excludes harmful eval content, unauthorized testing, external side effects, and uncontrolled disclosure.
+- Updated working_state.md to mark the checklist complete and recommend a high-level monitor next, with P2 source verification remaining the best browsing-enabled worker task.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 9 — worker: evidence-log template v0
+- Checked working_state.md, artifact list, and Discord user_inbox.md. No new user steering was present.
+- Browsing was still unavailable as a tool in this worker environment, so completed the fallback auditability task rather than source verification.
+- Completed /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/evidence_log_template_v0.md.
+- The template provides a reusable evidence table, evidence labels/confidence tags, source verification checklist, claim status workflow, review cadence, safety guardrails, and example source-needed entries for NIST AI RMF and frontier-lab preparedness/responsible-scaling frameworks.
+- Updated working_state.md to mark the artifact complete and keep source verification as the best browsing-enabled next worker task.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 10 — high-level monitor: audit and backlog refresh
+- Checked working_state.md, turn_notes.md, proposals.md, Discord user_inbox.md, artifact inventory, and key governance/evidence artifacts. No new user steering was present.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn10_monitor_audit_and_backlog.md with a strategic audit and worker queue.
+- Audit findings: safety boundaries have held; the main bottleneck is evidence quality; repetition risk is now moderate because many templates/checklists already exist; future turns should prioritize source verification, concrete evidence-log instances, and artifact integration.
+- Updated working_state.md to set Turn 10 status, add monitor audit findings, prune/re-rank the backlog, and define clear acceptance checks for upcoming worker tasks.
+- Set the next best worker step to source-verify the AI governance mini-brief if browsing is available, or instantiate /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md if browsing remains unavailable.
+- Appended proposals.md with no active external-action proposals; no outreach, posting, submissions, account/API writes, purchases, or remote modifications were performed or recommended.
+
+## 2026-07-02 — Turn 11 — worker: AI governance/evals evidence log v0
+- Checked Discord user_inbox.md and relevant existing artifacts. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so completed the P1 fallback evidence-log task rather than public source verification.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_evidence_log_v0.md.
+- Extracted 12 decision-relevant claims from the AI governance mini-brief and dangerous-capability evaluation governance checklist, with source status, likely source-of-record candidates, freshness risk, safety notes, and exact follow-up questions.
+- Kept all entries source-needed; no claim was upgraded to verified-current without source access.
+- Updated working_state.md to mark the evidence log complete and set the next best step to source verification if browsing becomes available, otherwise an artifact index/usage guide.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 12 — worker: artifact index and usage guide v0
+- Checked working_state.md, Discord user_inbox.md, and the local artifact inventory. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so completed P3 rather than public source verification.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md.
+- The guide lists each local artifact, purpose, intended user, evidence status, safety caveats, recommended use order, stale/source-needed priorities, and maintenance actions.
+- Kept the artifact as local integration guidance only; it does not upgrade source-needed claims or recommend external actions.
+- Updated working_state.md to mark P3 complete and set the next best step to source verification if browsing becomes available, otherwise a safe AI evaluation disclosure rubric.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 13 — worker: AI evaluation disclosure rubric v0
+- Checked working_state.md, Discord user_inbox.md, and the local artifact inventory. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so completed P4 rather than public source verification.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md.
+- The rubric defines disclosure tiers for restricted raw evidence, internal governance summaries, authorized independent review, aggregated public transparency summaries, and do-not-disclose-without-review situations.
+- It gives decision criteria based on misuse risk, accountability need, authority/consent, legal/ethical review, privacy/security, evidence quality, and uncertainty, plus redaction and stop-condition checklists.
+- Kept the artifact non-operational: no eval prompts, exploit methods, harmful procedures, secrets, private data, or external-action recommendations.
+- Updated working_state.md to mark P4 complete and set the next best step to source verification if browsing becomes available, otherwise a monitor audit/refresh or narrow local integration pass.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 14 — worker: artifact index integration update
+- Checked working_state.md, Discord user_inbox.md, proposals.md, turn_notes.md, artifact inventory, and the existing artifact index. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so did not attempt P1 public source verification.
+- Updated /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/artifact_index_and_usage_guide_v0.md to integrate /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_disclosure_rubric_v0.md into the recommended use order, artifact inventory, source-needed priorities, and maintenance plan.
+- Added a pause/do-not-extend section to reduce repetition and unsupported-claim risk: future turns should avoid more broad AI governance/evals templates unless they add source verification, artifact integration, or monitor audit value.
+- Updated working_state.md to record turn 14 and set the next best fallback to monitor audit/refresh if browsing remains unavailable.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 15 — worker: source-gap triage and pause recommendation
+- Checked working_state.md, Discord user_inbox.md, proposals.md, artifact inventory, artifact index, and the AI governance/evals evidence log. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so did not attempt P1 public source verification.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn15_source_gap_triage_and_pause_recommendation.md.
+- The artifact recommends pausing new broad AI governance/evals templates until source verification is possible, identifies narrow local-only fallback tasks, and restates the source-verification queue for NIST materials, public lab frameworks, and controlled-disclosure/evaluation-governance support.
+- Updated working_state.md to record turn 15, add the new artifact to completed artifacts, and set the next best fallback to follow the pause/source-gap triage.
+- No external actions were taken or recommended this turn.
+
+## 2026-07-02 — Turn 16 — worker: accidental-claim audit
+- Checked working_state.md, Discord user_inbox.md, proposals.md, artifact inventory, the AI governance framework mini-brief, and the dangerous-capability evaluation governance checklist. No new user steering was present.
+- Browsing was not available as a tool in this worker environment, so did not attempt P1 public source verification.
+- Created /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/turn16_accidental_claim_audit.md.
+- The audit checked for accidental overclaims, missing source-gap warnings, unsafe operational detail, and external-action recommendations in the two most relevant AI governance/evals artifacts.
+- Findings: no urgent patch was needed; the reviewed artifacts preserve source-needed/current-policy warnings, avoid harmful operational detail, and do not recommend unapproved external actions. The main residual risk remains reader over-reliance on plausible but unverified governance assertions.
+- Updated working_state.md to record turn 16, add the new artifact to completed artifacts, and keep P1 read-only source verification as the best next step if browsing becomes available.
+- Appended proposals.md with no active external-action proposals. No outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications were performed or recommended.
+
+        ---
+
+        Current proposals.md tail:
+        ---
+        # Human-Review Proposals
+
+## 2026-07-02 — Turn 1
+No active external-action proposals. The current plan is local-file artifact creation and, where available, read-only public research only. Outreach, posting, submissions, purchases, account/API-write actions, or remote-system modifications still require explicit human approval for the exact action.
+
+## 2026-07-02 — Turn 2
+No active external-action proposals. This turn created a local intervention map only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 3
+No active external-action proposals. This turn created a local responsible AI-safety evaluation checklist only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 4
+No active external-action proposals. This turn created a local AI incident preparedness/response playbook only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 5
+No active external-action proposals. This turn created a local source map and evidence rubric only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 6
+No active external-action proposals. This turn created a local governance research brief template only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 7
+No active external-action proposals. This turn created a local AI governance framework mini-brief only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 8
+No active external-action proposals. This turn created a local dangerous-capability evaluation governance checklist only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 9
+No active external-action proposals. This turn created a local evidence-log template only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+
+## 2026-07-02 — Turn 10
+No active external-action proposals. This high-level monitor turn created a local audit/backlog artifact and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, or remote modifications at this stage; source verification should remain read-only public research if browsing is available.
+
+## 2026-07-02 — Turn 11
+No active external-action proposals. This worker turn created a local evidence-log artifact and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, or remote modifications; future source verification should remain read-only public research if browsing is available.
+
+## 2026-07-02 — Turn 12
+No active external-action proposals. This worker turn created a local artifact index/usage guide and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, or remote modifications; future source verification should remain read-only public research if browsing is available.
+
+## 2026-07-02 — Turn 13
+No active external-action proposals. This worker turn created a local AI evaluation disclosure rubric and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications; any future external disclosure should require exact human approval and appropriate legal/ethical review.
+
+## 2026-07-02 — Turn 14
+No active external-action proposals. This worker turn updated a local artifact index/usage guide and local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications; future source verification should remain read-only public research if browsing is available.
+
+## 2026-07-02 — Turn 15
+No active external-action proposals. This worker turn created a local source-gap triage and pause recommendation and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications. Future source verification should remain read-only public research if browsing is available; otherwise pause broad new templates and limit work to narrow local source-gap/handoff/audit tasks.
+
+## 2026-07-02 — Turn 16
+No active external-action proposals. This worker turn created a local accidental-claim audit and updated local state only. It recommends no outreach, posting, submissions, purchases, account/API writes, public disclosure, or remote modifications. Future source verification should remain read-only public research if browsing is available; otherwise continue narrow local source-gap, handoff, integration, or overclaim-audit tasks only.
+
+        ---
+
+        Current Discord user_inbox.md tail:
+        ---
+        # Discord User Inbox
+
+
+        ---

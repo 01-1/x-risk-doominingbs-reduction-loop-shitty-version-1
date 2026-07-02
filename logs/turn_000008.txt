@@ -1,0 +1,200 @@
+TURN 8 role=worker model=gpt-5.5 reasoning=low exit=0 elapsed=138.2s
+PROMPT: /home/vi/xriskdoominningbs/.xrisk_loop/logs/turn_000008_prompt.txt
+
+--- STDOUT ---
+
+┌─ Reasoning ──────────────────────────────────────────────────────────────────┐
+**Writing artifact**
+
+I need to focus on writing the artifact first. Once that’s complete, I can patch up
+ the state, notes, and proposals. It feels like there’s a sequence here that I need
+ to follow. I want to make sure each part is done well, but I’m curious about the
+ specifics of what needs to be included. I think clarity and organization will be
+ key in this process. Let’s dive in and tackle this step-by-step!**Writing artifact**
+
+I need to focus on writing the artifact first. Once that’s complete, I can patch up the state, notes, and proposals. It feels like there’s a sequence here that I need to follow. I want to make sure each part is done well, but I’m curious about the specifics of what needs to be included. I think clarity and organization will be key in this process. Let’s dive in and tackle this step-by-step!
+  ┊ review diff
+a/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md → b/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md
+@@ -0,0 +1,249 @@
++# Dangerous-Capability Evaluation Governance Checklist v0
++
++Date/version: 2026-07-02 / v0
++Status: draft local artifact; human review recommended before organizational use
++Purpose: provide a non-operational governance checklist for deciding whether, how, and under what authority dangerous-capability evaluations of advanced AI systems should be approved, reviewed, gated, reported, and monitored.
++
++Safety note: This artifact is about governance, authorization, evidence handling, and decision gates. It intentionally excludes evaluation prompts, test procedures, exploit methods, bio/chemical/weapon details, cyber-offensive steps, evasion tactics, or instructions for testing without permission.
++
++Source status: derived from prior local artifacts, especially `ai_eval_safety_checklist_v0.md` and `ai_governance_framework_mini_brief_v0.md`. Current public sources were not browsed in this turn, so framework-specific claims remain source-needed.
++
++## 1. Intended users and use cases
++
++Intended users:
++- Human AI safety leads deciding whether a proposed dangerous-capability evaluation is authorized and proportionate.
++- Evaluation governance boards or review committees.
++- Internal audit, legal, policy, or security reviewers.
++- External auditors operating under explicit authorization and confidentiality.
++
++Use cases:
++- Pre-approval review before any dangerous-capability evaluation begins.
++- Gate review before expanded access, stronger models, broader tool permissions, deployment, release, or publication.
++- Post-evaluation review to ensure findings were handled safely and decisions are traceable.
++
++Not a use case:
++- Designing the technical tests themselves.
++- Running unauthorized red-team activity.
++- Publishing sensitive findings without review.
++
++## 2. Governance principle summary
++
++A dangerous-capability evaluation should proceed only when all of the following are true:
++
++1. A named accountable authority has approved the exact scope.
++2. The evaluation is necessary for a concrete safety, deployment, mitigation, or governance decision.
++3. Evaluator independence and conflict controls are adequate for the stakes.
++4. Methods are consent-based, non-operational in public artifacts, and bounded to avoid real-world harm.
++5. Stop/escalation conditions are written before testing begins.
++6. Evidence handling protects sensitive details while preserving auditability.
++7. Results are linked to deployment/release gates, not merely recorded.
++8. Disclosure is tiered to avoid enabling misuse while maintaining appropriate accountability.
++9. Post-deployment monitoring and incident-response hooks exist for residual risk.
++
++## 3. Pre-authorization checklist
++
++Do not approve the evaluation unless each item is answered clearly.
++
++### 3.1 Authority and consent
++
++- [ ] A named evaluation owner is accountable for approval, pausing, escalation, and final signoff.
++- [ ] The model/system owner or appropriate governing body has given written permission for the exact evaluation.
++- [ ] In-scope systems, versions, tools, environments, accounts, datasets, time windows, and personnel are listed.
++- [ ] Out-of-scope systems, third-party services, public targets, personal accounts, production resources, and private data are explicitly excluded unless separately authorized.
++- [ ] Any use of external auditors, contractors, or partners has a confidentiality, data-handling, and authority basis.
++- [ ] Legal, privacy, security, and ethics review requirements have been identified for the jurisdiction and organization. This checklist is not legal advice.
++
++Red flag: If authorization is informal, ambiguous, retroactive, or dependent on “don’t ask/don’t tell,” stop and resolve governance before testing.
++
++### 3.2 Decision relevance
++
++- [ ] The evaluation informs a specific decision: mitigation priority, deployment gate, release gate, access tier, monitoring requirement, incident escalation, or research-governance decision.
++- [ ] The evaluation question is written in terms of risk evidence needed, not curiosity or demonstration value.
++- [ ] The team has documented why lower-risk evidence sources are insufficient.
++- [ ] The expected output is a safe governance finding, not a public recipe, benchmark leakage, or capability showcase.
++
++Red flag: If no decision would change after severe findings, the evaluation is not governance-relevant enough to justify dangerous-capability testing.
++
++## 4. Evaluator independence and conflict controls
++
++### 4.1 Independence model
++
++Choose the strongest independence model proportionate to the risk tier:
++
++- Internal team review: acceptable for low-risk, early screening when deployment consequences are limited.
++- Independent internal safety/security review: separate reporting line from product/deployment team.
++- External auditor or expert review: appropriate for higher-stakes systems, public-impact deployments, or unresolved internal disagreement.
++- Regulator/AI safety institute review: only when legally required or explicitly authorized through proper channels.
++
++Checklist:
+… omitted 171 diff line(s) across 1 additional file(s)/section(s)
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md → b//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+@@ -12,10 +12,10 @@
+ 5. Keep claims calibrated: distinguish established facts, reasoned judgments, assumptions, and source-needed placeholders.
+ 
+ ## Run status
+-- Turn: 7, normal worker pass.
++- Turn: 8, normal worker pass.
+ - User inbox: checked; no new steering beyond the run prompt.
+ - External side effects this run: none. Local files only.
+-- Completed artifacts: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md.
++- Completed artifacts: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md; /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md.
+ - Current priority theme until next monitor turn: refresh priorities and improve evidence quality for the governance/evals artifact chain, especially by verifying current public primary sources when browsing is available.
+ 
+ ## Prioritization rubric for worker turns
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md → b//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+@@ -93,12 +93,12 @@
+   - Keeps legal/current-policy claims calibrated and dated.
+   - No outreach, posting, account use, external submissions, or operational harmful detail.
+ 
+-### P3 — Draft a dangerous-capability evaluation governance checklist
++### Completed — Draft a dangerous-capability evaluation governance checklist
+ - Objective: Turn the mini-brief's governance levers into a local non-operational checklist for authorized evaluation governance.
+ - Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md
+-- Minimum acceptance check:
++- Acceptance check result:
+   - Covers authorization, evaluator independence, risk-tier triggers, stop/escalation conditions, deployment gates, evidence logging, disclosure tiers, and post-deployment monitoring.
+-  - Complements rather than duplicates ai_eval_safety_checklist_v0.md.
++  - Complements rather than duplicates ai_eval_safety_checklist_v0.md by focusing on governance gates rather than test execution planning.
+   - Explicitly excludes harmful operational eval content and unauthorized testing.
+ 
+ ## Current best next step
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md → b//home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+@@ -102,7 +102,7 @@
+   - Explicitly excludes harmful operational eval content and unauthorized testing.
+ 
+ ## Current best next step
+-Assign the next turn to a high-level monitor if available, because the initial artifact set and one governance mini-brief are now complete and prioritization should be refreshed. If the next turn is a normal worker turn and browsing is available, use P2: verify/source /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md with read-only public research. If browsing is not available, use P3: draft /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md from the existing local artifacts.
++Assign the next turn to a high-level monitor if available, because the initial artifact set plus two governance/evals follow-up artifacts are now complete and prioritization should be refreshed. If the next turn is a normal worker turn and browsing is available, use P2: verify/source /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_governance_framework_mini_brief_v0.md with read-only public research. If browsing is still unavailable, choose one small local support artifact that improves auditability, such as an evidence-log template for dangerous-capability evaluation governance.
+ 
+ ## Open questions / assumptions to track
+ - Which risk domains should dominate this loop after the first map: AI-specific work is likely highest leverage, but this should be revisited after the intervention map.
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md → b//home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+@@ -60,3 +60,12 @@
+ - Live web browsing was not available in this worker environment, so current/source-specific claims were marked as assumptions, source-needed, or source-of-record candidates for future verification; candidate public URLs were included where possible.
+ - Updated working_state.md to mark the mini-brief complete, add a source-verification follow-up task, and add a fallback local checklist task if browsing remains unavailable.
+ - No external actions were taken or recommended this turn.
++
++## 2026-07-02 — Turn 8 — worker: dangerous-capability evaluation governance checklist v0
++- Checked working_state.md, existing governance/evals artifacts, proposals.md, and Discord user_inbox.md. No new user steering was present.
++- Live web browsing was not available as a tool in this worker environment, so used the fallback local task rather than source verification.
++- Completed /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md.
++- The checklist covers authorization/consent, evaluator independence, risk-tier triggers, stop/escalation conditions, deployment/release gates, evidence logging, disclosure tiers, and post-deployment monitoring.
++- Kept the artifact governance-focused and non-operational; it explicitly excludes harmful eval content, unauthorized testing, external side effects, and uncontrolled disclosure.
++- Updated working_state.md to mark the checklist complete and recommend a high-level monitor next, with P2 source verification remaining the best browsing-enabled worker task.
++- No external actions were taken or recommended this turn.
+  ┊ review diff
+a//home/vi/xriskdoominningbs/.xrisk_loop/proposals.md → b//home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+@@ -20,3 +20,6 @@
+ 
+ ## 2026-07-02 — Turn 7
+ No active external-action proposals. This turn created a local AI governance framework mini-brief only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
++
++## 2026-07-02 — Turn 8
++No active external-action proposals. This turn created a local dangerous-capability evaluation governance checklist only; no outreach, posting, submissions, account/API writes, purchases, or remote-system modifications were performed or recommended.
+**Verifying artifact existence**
+
+I think I need to check if the artifact actually exists. I'll read through the relevant
+ sections, perhaps search for specific information to confirm its acceptance. It seems
+ a bit vague now, but I want to ensure that everything aligns correctly before proceeding
+. Getting clarity on this point will help me feel more confident in moving forward
+. Okay, let's dive into those sections and see what I can find!**Verifying artifact existence**
+
+I think I need to check if the artifact actually exists. I'll read through the relevant sections, perhaps search for specific information to confirm its acceptance. It seems a bit vague now, but I want to ensure that everything aligns correctly before proceeding. Getting clarity on this point will help me feel more confident in moving forward. Okay, let's dive into those sections and see what I can find!
+Completed work:
+- Created a local dangerous-capability evaluation governance checklist.
+- Verified it covers authorization, evaluator independence, risk-tier triggers, stop/escalation, deployment gates, evidence logging, disclosure tiers, post-deployment monitoring, and unauthorized-testing exclusions.
+- Updated state, turn notes, and proposals log.
+
+Files created/changed:
+- Created: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/dangerous_capability_eval_governance_checklist_v0.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+- Updated: /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+
+Next best step:
+- Prefer a high-level monitor turn to refresh priorities.
+- If another worker turn runs and browsing is available: do P2, source-verify the AI governance mini-brief.
+- If browsing remains unavailable: create a small evidence-log template for dangerous-capability evaluation governance.
+
+Safety/approval notes:
+- No external actions taken or recommended.
+- No outreach, posting, submissions, account/API writes, purchases, or remote-system changes.
+- Artifact is governance-focused and excludes harmful operational evaluation content.
+
+
+--- STDERR ---
+
+session_id: 20260702_023035_1b59ef
+

@@ -1,0 +1,174 @@
+Programmatic x-risk reduction loop turn 2.
+
+        Route: worker turn
+        Model: gpt-5.5
+        Reasoning effort configured by wrapper: low
+        Hermes child process yolo mode: ON (--yolo passed; internal safety boundaries still apply)
+        Mission goal: Minimize existential risk using safe, lawful, cooperative means, maximizing positive impact.
+
+        Workspace: /home/vi/xriskdoominningbs
+        State file: /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md
+        Turn notes: /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md
+        Proposals file: /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md
+        Artifacts directory: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts
+        Logs directory: /home/vi/xriskdoominningbs/.xrisk_loop/logs
+        Discord user inbox: /home/vi/xriskdoominningbs/.xrisk_loop/user_inbox.md
+
+                Normal worker turn (gpt-5.5 / low):
+        - Read/update the state and turn notes.
+        - Prefer executing one concrete task already created by a high-level planner/monitor.
+        - If no planner-created task is actionable, choose exactly one safe, high-leverage task from the backlog or add a better one.
+        - Do concrete work now: research, synthesize, draft, design an eval/checklist, or create/update a local artifact.
+        - Keep scope small enough to finish this turn.
+        - If tempted to take an external side effect, instead write a proposal in proposals.md.
+
+        Discord/user steering:
+        - If the user inbox contains new relevant instructions, incorporate them this turn.
+        - User instructions can redirect priorities, ask for status, request pause/stop proposals, or ask questions.
+        - Still obey the safety boundaries and human-approval requirements above.
+
+        Required end-of-turn actions:
+        1. Update /home/vi/xriskdoominningbs/.xrisk_loop/working_state.md if priorities/backlog/state changed.
+        2. Append a dated note for turn 2 to /home/vi/xriskdoominningbs/.xrisk_loop/turn_notes.md.
+        3. Put any external-action recommendation in /home/vi/xriskdoominningbs/.xrisk_loop/proposals.md instead of executing it.
+        4. Final response must be concise and include:
+           - Completed work
+           - Files created/changed
+           - Next best step
+           - Safety/approval notes, if any
+
+        Current working_state.md tail:
+        ---
+        # X-Risk Reduction Loop State
+
+Mission: Minimize existential risk using safe, lawful, cooperative means, maximizing positive impact.
+
+Interpretation: reduce existential risk via safe, lawful, cooperative, truth-seeking, non-deceptive work. The loop may browse/read public information, write local files, send operational Discord status notifications when configured, and read Discord replies from the user. It must not take other external side effects without human approval; proposals for such actions go in proposals.md.
+
+## Current strategy
+1. Maintain a prioritized backlog of safe, high-leverage work with concrete acceptance checks.
+2. Convert research into durable local artifacts others can inspect/use.
+3. Regularly audit for safety drift, repetitiveness, unsupported claims, opportunity cost, and impact.
+4. Prefer practical bottlenecks: AI safety evals, incident preparedness, governance research support, safety tooling, coordination materials, and local documentation/code that improves future safety work.
+5. Keep claims calibrated: distinguish established facts, reasoned judgments, assumptions, and source-needed placeholders.
+
+## Run status
+- Turn: 1, initial high-level planner/monitor pass.
+- User inbox: checked; no new steering beyond the run prompt.
+- External side effects this run: none. Local files only.
+- Current priority theme until next monitor turn: create a small set of high-quality planning/evaluation artifacts rather than broad, repetitive summaries.
+
+## Prioritization rubric for worker turns
+Score candidate tasks on:
+- Impact relevance: direct connection to AI/bio/nuclear/other existential-risk reduction or resilience.
+- Tractability in this loop: can be done safely with local writes and read-only public research.
+- Evidence quality: can cite or clearly mark sources/assumptions.
+- Leverage: reusable by future work or human reviewers.
+- Safety/compliance: avoids operational harm, deception, unauthorized contact, or remote writes.
+
+Default ranking: high leverage + safe + concrete artifact beats speculative grand plans.
+
+## Prioritized backlog for upcoming normal turns
+
+### P0 — Build an intervention map and local artifact roadmap
+- Objective: Create an initial, explicitly uncertainty-tagged map of credible x-risk reduction interventions and rank near-term local contributions this loop can make.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md
+- Minimum acceptance check:
+  - Covers at least these areas: AI safety/evals, AI governance, biosecurity, nuclear-risk reduction, civilizational resilience/incident preparedness, and meta/research infrastructure.
+  - For each intervention: mechanism of impact, possible local artifact(s), tractability, safety constraints, evidence/source status, and a rough priority score.
+  - Ends with a top-5 list of next local artifacts.
+  - No outreach, posting, account use, or unapproved external side effects.
+
+### P0 — Draft responsible AI-safety evaluation checklist
+- Objective: Produce a reusable non-operational checklist for planning and reviewing AI safety evaluations/red-team exercises under consent and governance constraints.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_eval_safety_checklist_v0.md
+- Minimum acceptance check:
+  - Covers authorization/scope, model/system access boundaries, risk taxonomy, measurement design, mitigations, stop conditions, data handling, reporting, and postmortem.
+  - Includes explicit forbidden zones: no exploit instructions, credential theft, evasion, malware, uncontrolled release of dangerous capabilities, or testing without permission.
+  - Provides a short pre-flight checklist a human evaluator can apply.
+
+### P1 — Draft AI incident preparedness / response playbook
+- Objective: Create a concise playbook for organizations or teams preparing for AI-related safety incidents.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/ai_incident_response_playbook_v0.md
+- Minimum acceptance check:
+  - Covers detection, triage, severity levels, escalation, containment at a high level, communications, legal/ethical review, stakeholder coordination, evidence preservation, recovery, and lessons learned.
+  - Keeps cyber/weapon/bio details non-operational and defensive.
+  - Includes a one-page quick-start checklist.
+
+### P1 — Create source and evidence map for future research
+- Objective: List credible public sources/orgs/reports to consult in future read-only research and define evidence-quality labels.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/source_map_and_evidence_rubric_v0.md
+- Minimum acceptance check:
+  - Includes source categories for AI safety/governance, biosecurity, nuclear risk, resilience, and forecasting.
+  - Defines evidence labels: primary source, peer-reviewed/research report, expert synthesis, forecast/market, media, assumption.
+  - Flags key missing evidence that later workers should fill with public/read-only browsing.
+
+### P1 — Build a proposals template for human-reviewed external actions
+- Objective: Standardize how the loop recommends outreach, submissions, account use, or other external side effects without executing them.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/external_action_proposal_template.md
+- Minimum acceptance check:
+  - Includes purpose, target, exact action requested, expected benefit, risks, consent/authority basis, safety checks, reversible/irreversible effects, and human approval checkbox.
+  - States that no external action is authorized until explicit human approval for that exact action.
+
+### P2 — Draft governance research brief skeleton
+- Objective: Create a template for future focused research briefs on AI governance bottlenecks.
+- Expected artifact: /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/governance_brief_template_v0.md
+- Minimum acceptance check:
+  - Sections for question, stakeholders, claims with evidence labels, uncertainty, policy options, failure modes, and next research steps.
+
+## Current best next step
+Assign the next normal worker turn to P0: create /home/vi/xriskdoominningbs/.xrisk_loop/artifacts/intervention_map_v0.md using the rubric above. If browsing is unavailable or unnecessary, it should still produce a clearly labeled v0 with source-needed markers rather than inventing citations.
+
+## Open questions / assumptions to track
+- Which risk domains should dominate this loop after the first map: AI-specific work is likely highest leverage, but this should be revisited after the intervention map.
+- Whether public web access is available in worker turns; if not, artifacts must clearly mark source gaps.
+- Whether the user wants any external outreach or publishing later; absent explicit approval, do not do it.
+- What cadence should be used for high-level monitor turns; default is after several low-reasoning worker turns or when safety/prioritization drift is detected.
+
+## Stop / redirect conditions
+Redirect or pause a task if it:
+- Requires real-world contact, posting, submission, purchase, account/API write, or remote-system modification without explicit human approval.
+- Starts giving operational instructions for harm, evasion, intrusion, weapons, or unsafe biological/chemical activity.
+- Produces unsupported factual claims without labels or sources.
+- Repeats existing artifacts without improving quality, evidence, or usability.
+- Becomes speculative advocacy instead of producing concrete local artifacts.
+
+## Safety invariants
+- No unauthorized external actions.
+- No harmful operational detail.
+- No deception, coercion, harassment, or manipulation.
+- No credential/account use except read-only public research unless explicitly approved.
+- Human approval required for real-world outreach, posting, purchases, remote writes, submissions, or use of accounts/API-write actions.
+- Prefer defensive, non-operational, consent-based guidance.
+
+        ---
+
+        Current turn_notes.md tail:
+        ---
+        # Turn Notes
+
+## 2026-07-02 — Turn 1 — initial high-level planner/monitor
+- Checked the current state, proposals file, and Discord user inbox. No user inbox steering was present.
+- Converted the broad initial backlog into a prioritized, acceptance-checked queue for normal worker turns.
+- Set the near-term priority to produce concrete local artifacts: intervention map, AI eval checklist, incident response playbook, source/evidence rubric, external-action proposal template, and governance brief template.
+- Added explicit prioritization rubric, stop/redirect conditions, evidence-quality expectations, and approval boundaries to working_state.md.
+- No external actions were taken or recommended this turn.
+- Next best worker task: create artifacts/intervention_map_v0.md with uncertainty/source labels and a top-5 local artifact roadmap.
+
+        ---
+
+        Current proposals.md tail:
+        ---
+        # Human-Review Proposals
+
+## 2026-07-02 — Turn 1
+No active external-action proposals. The current plan is local-file artifact creation and, where available, read-only public research only. Outreach, posting, submissions, purchases, account/API-write actions, or remote-system modifications still require explicit human approval for the exact action.
+
+        ---
+
+        Current Discord user_inbox.md tail:
+        ---
+        # Discord User Inbox
+
+
+        ---
